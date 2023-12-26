@@ -11,15 +11,24 @@
         <h1>Joshua Massa-Pelletier</h1>
             <nav>
                 <ul>
+                    <li>My Work</li>
                     <li>About Me</li>
-                    <li>Portfolio</li>
                     <li>Contact</li>
                 </ul>
             </nav>
     </header>
     <main>
-
+        <button onclick="openSlackChat()"><img src="./assets/images/slack-logo.svg" alt="slack logo">
+            <strong>CHAT WITH ME ON SLACK</strong>
+        </button>
     </main>
-    <footer></footer>
+    <footer>&copy; JMP Productions 2023</footer>
+
+    <script>
+        function openSlackChat() {
+            window.location.href = "slack://user?team=T065H9NAAR3&id=U0690V42F43";
+        }
+    </script>
+
 </body>
 </html>
