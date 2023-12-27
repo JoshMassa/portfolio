@@ -13,6 +13,7 @@ body {
     font-family:'Times New Roman', Times, serif;
     margin-left: 5%;
     height: 100vh;
+    
 }
 
 button {
@@ -72,6 +73,10 @@ main {
     display: flex;
 }
 
+p {
+    margin: 10px;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -104,4 +109,16 @@ main {
 #summary {
     display: flex;
     flex-direction: column;
+    background-color: #C0C0C0;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+}
+
+strong {
+    text-wrap: nowrap;
+}
+
+#slack-button {
+    margin-left: -2.75%;
 }
