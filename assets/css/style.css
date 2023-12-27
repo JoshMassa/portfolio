@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: grey;
     font-family:'Times New Roman', Times, serif;
@@ -47,11 +51,11 @@ h1 {
     font-size: 24px;
 }
 
-nav {
+header nav {
     display: flex;
 }
 
-nav ul {
+header nav ul {
     display: flex;
     list-style: none;
     text-wrap: nowrap;
