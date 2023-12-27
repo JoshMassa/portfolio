@@ -13,7 +13,6 @@ body {
     font-family:'Times New Roman', Times, serif;
     margin-left: 5%;
     height: 100vh;
-    overflow: hidden;
 }
 
 button {
@@ -38,6 +37,10 @@ button img {
 
 button:hover {
     background-color: rgb(58, 0, 58);
+}
+
+footer {
+    text-align: center;
 }
 
 header {
@@ -65,9 +68,18 @@ li {
     margin: 20px;
 }
 
-/* .container {
+.container {
+    display: flex;
+}
 
-} */
+.container img {
+    width: 100%;
+    max-width: 350px;
+    height: 450px;
+    object-fit: cover;
+    padding: 20px;
+    border-radius: 50px;
+}
 
 .glow {
     border-radius: 8px;
