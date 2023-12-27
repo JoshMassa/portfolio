@@ -15,7 +15,8 @@ article p,
 h2,
 #my-photo,
 nav {
-    z-index: 1000;
+    position: relative;
+    z-index: 1;
 }
 
 body {
@@ -43,6 +44,13 @@ button img {
     display: flex;
 }
 
+figure {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+}
+
 footer {
     display: flex;
     justify-content: center;
@@ -60,6 +68,10 @@ h1 {
 h2 {
     display: inline;
     font-size: 3em;
+}
+
+h2, p {
+    color: white;
 }
 
 header nav {
@@ -116,7 +128,7 @@ button:hover {
     width: 100%;
     max-width: 350px;
     object-fit: cover;
-    margin: auto;
+    margin: 20px 20px 20px 40%;
 }
 
 .container #my-photo {
@@ -143,7 +155,7 @@ button:hover {
     background-color: rgb(50, 0, 50);
     color: white;
     border-bottom: 5px solid rgb(175, 0, 175);
-    z-index: 10001;
+    z-index: 2;
 }
 
 .icons {
@@ -153,14 +165,14 @@ button:hover {
     min-width: 100px;
 }
 
-/* .overlay {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(100, 100, 100, 0.7);
-} */
+}
 
 /* ID Selectors */
 #flex-end {
@@ -184,19 +196,14 @@ button:hover {
     justify-content: flex-start;
 }
 
-#slack-button {
-    margin-left: -2.75%;
-}
-
-#summary {
+/* #summary {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    min-width: 310px;
+    min-width: 1000px;
     border-radius: 15px;
     padding: 20px;
-    margin: 20px;
-    color: white;
-}
+} */
 
 /* Keyframes */
 @keyframes pulse {
@@ -211,10 +218,7 @@ button:hover {
     } /* This code block sets the properties for "animation: pulse" */
 }
 
-/*  */
-figure {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 100px;
+/* Experimental Code */
+#section-1 {
+    padding-top: 200px;
 }
