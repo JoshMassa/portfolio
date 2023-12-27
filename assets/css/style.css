@@ -46,11 +46,12 @@ footer {
     border-top: 5px solid rgb(175, 0, 175);
 }
 
-header {
+.header-container {
     display: flex;
-    justify-content: space-around;
+    position: fixed;
+    width: 100%;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     background-color: rgb(50, 0, 50);
     color: white;
     border-bottom: 5px solid rgb(175, 0, 175);
@@ -58,28 +59,31 @@ header {
 
 h1 {
     font-size: 24px;
+    margin-left: 75px;
 }
 
 header nav {
-    display: flex;
+    flex-grow: 1;
 }
 
 header nav ul {
     display: flex;
     list-style: none;
-    text-wrap: nowrap;
+    justify-content: center;
+    margin-right: 8%;
 }
 
 li {
-    margin: 20px;
+    margin: 0 20px;
 }
 
 main {
     display: flex;
-    background-image: url(../images/background-image.jpg);
+    background-color: rgb(178, 178, 178);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 250px 0;
 }
 
 p {
@@ -88,16 +92,16 @@ p {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
     max-width: 350px;
     object-fit: cover;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .container #my-photo {
     width: 100%;
     max-width: 350px;
+    min-width: 350px;
     height: 450px;
     object-fit: cover;
     padding: 20px;
@@ -120,6 +124,7 @@ p {
     display: flex;
     flex-direction: column;
     background-color: #C0C0C0;
+    min-width: 310px;
     border-radius: 15px;
     padding: 20px;
     margin: 20px;
@@ -132,6 +137,30 @@ strong {
 
 #slack-button {
     margin-left: -2.75%;
+}
+
+#flex-end {
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+#flex-start {
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+    max-width: 350px;
+    margin-left: 50px;
+}
+
+.icons {
+    width: 100%;
+    max-width: 100px;
+    min-width: 100px;
+}
+
+figure {
+    margin-bottom: 5%;
+    margin-left: 5.5%;
 }
 
 /* Keyframes */
