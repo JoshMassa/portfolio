@@ -1,15 +1,25 @@
+/* Universal Selector */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+
+/* Element Selectors */
 a {
     text-decoration: none;
 }
 
+article p,
+h2,
+#my-photo,
+nav {
+    z-index: 1000;
+}
+
 body {
-    font-family:'Times New Roman', Times, serif;
+    font-family:Arial, Helvetica, sans-serif;
     height: fit-content;
 }
 
@@ -33,10 +43,6 @@ button img {
     display: flex;
 }
 
-button:hover {
-    background-color: rgb(58, 0, 58);
-}
-
 footer {
     display: flex;
     justify-content: center;
@@ -46,20 +52,14 @@ footer {
     border-top: 5px solid rgb(175, 0, 175);
 }
 
-.header-container {
-    display: flex;
-    position: fixed;
-    width: 100%;
-    align-items: center;
-    padding: 15px;
-    background-color: rgb(50, 0, 50);
-    color: white;
-    border-bottom: 5px solid rgb(175, 0, 175);
-}
-
 h1 {
     font-size: 24px;
     margin-left: 75px;
+}
+
+h2 {
+    display: inline;
+    font-size: 3em;
 }
 
 header nav {
@@ -77,17 +77,38 @@ li {
     margin: 0 20px;
 }
 
-main {
-    display: flex;
-    background-color: rgb(178, 178, 178);
+p {
+    margin: 10px;
+}
+
+strong {
+    text-wrap: nowrap;
+}
+
+/* Pseudo Class Selectors */
+button:hover {
+    background-color: rgb(58, 0, 58);
+}
+
+.glow:hover {
+    box-shadow: inset 0 0 8px
+    rgb(145, 0, 145), 0 0 20px
+    rgb(145, 0, 145);
+    animation: pulse 1.5s infinite;
+}
+
+/* Class Selectors */
+.background-image {
+    background-image: url(../images/background-image.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 250px 0;
+    width: 100%;
+    height: 100%;
 }
 
-p {
-    margin: 10px;
+.contain {
+    position: relative;
 }
 
 .container {
@@ -105,7 +126,7 @@ p {
     height: 450px;
     object-fit: cover;
     padding: 20px;
-    border-radius: 50px;
+    border-radius: 30%;
 }
 
 .glow {
@@ -113,32 +134,35 @@ p {
     transition: all 0.5s ease-in-out;
 }
 
-.glow:hover {
-    box-shadow: inset 0 0 8px
-    rgb(145, 0, 145), 0 0 20px
-    rgb(145, 0, 145);
-    animation: pulse 1.5s infinite;
-}
-
-#summary {
+.header-container {
     display: flex;
-    flex-direction: column;
-    background-color: #C0C0C0;
-    min-width: 310px;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 5px 5px 5px 2px rgb(127, 127, 127);
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    padding: 15px;
+    background-color: rgb(50, 0, 50);
+    color: white;
+    border-bottom: 5px solid rgb(175, 0, 175);
+    z-index: 10001;
 }
 
-strong {
-    text-wrap: nowrap;
+.icons {
+    display: inline-block;
+    width: 100%;
+    max-width: 100px;
+    min-width: 100px;
 }
 
-#slack-button {
-    margin-left: -2.75%;
-}
+/* .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 100, 100, 0.7);
+} */
 
+/* ID Selectors */
 #flex-end {
     justify-content: flex-end;
     margin-right: 50px;
@@ -152,15 +176,26 @@ strong {
     margin-left: 50px;
 }
 
-.icons {
-    width: 100%;
-    max-width: 100px;
-    min-width: 100px;
+#section-1 {
+    display: flex;
+    padding: 75px 0 40px 0;
+    border-bottom: 5px solid rgb(175, 0, 175);
+    margin-bottom: 5px;
+    justify-content: flex-start;
 }
 
-figure {
-    margin-bottom: 5%;
-    margin-left: 5.5%;
+#slack-button {
+    margin-left: -2.75%;
+}
+
+#summary {
+    display: flex;
+    flex-direction: column;
+    min-width: 310px;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    color: white;
 }
 
 /* Keyframes */
@@ -175,3 +210,5 @@ figure {
         box-shadow: 0 0 10px rgba(125, 0, 125, 0.7);
     } /* This code block sets the properties for "animation: pulse" */
 }
+
+/*  */
