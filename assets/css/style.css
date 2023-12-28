@@ -90,13 +90,15 @@ header nav ul {
     margin-right: 8%;
 }
 
+html {
+    min-width: min-content;
+}
+
 li {
     margin: 0 20px;
 }
 
-p {
 
-}
 
 strong {
     text-wrap: nowrap;
