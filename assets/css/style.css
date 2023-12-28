@@ -18,9 +18,11 @@ article {
 article p,
 h2,
 #my-photo,
+#name,
 nav {
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 body {
@@ -30,21 +32,18 @@ body {
 
 button {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     padding: 5px 5px 0 0;
-    padding-bottom: 0%;
     border: none;
     border-radius: 15px;
-    /* font-size: 1.2em; */
+    font-size: 10px;
     background-color: rgb(90, 0, 90);
     color: #ffffffd7;
     box-shadow: 5px 5px 5px 2px rgb(45, 0, 45);
-    margin-bottom: 20px;
 }
 
 button img {
-    max-height: 50px;
+    max-height: 35px;
     display: flex;
 }
 
@@ -71,8 +70,9 @@ h1 {
 
 h2 {
     width: 100%;
-    transform: rotate(-1deg);
+    /* transform: rotate(-2deg); */
     font-size: 60px;
+    margin-bottom: 25px;
 }
 
 h2, p {
@@ -92,13 +92,21 @@ header nav ul {
 
 html {
     min-width: min-content;
+    max-width: 100%;
+    width: 100%;
 }
 
 li {
     margin: 0 20px;
 }
 
+p {
+    width: 350px;
+}
 
+section nav {
+    margin: 2.5em 0 0 34em;
+}
 
 strong {
     text-wrap: nowrap;
@@ -136,10 +144,11 @@ button:hover {
 
 .container #my-photo {
     width: 100%;
-    max-width: 200px;
-    min-width: 200px;
-    padding: 25px 20px 20px 20px;
-    border-radius: 50%;
+    max-width: 160px;
+    min-width: 160px;
+    /* padding: 0 20px 20px 20px; */
+    border-radius: 30%;
+    margin: 5px 0 0 20px;
 }
 
 .glow {
@@ -166,46 +175,49 @@ button:hover {
     min-width: 100px;
 }
 
-/* .overlay {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(100, 100, 100, 0.5);
-} */
+}
 
 /* ID Selectors */
 #article-container-1 {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    padding-top: 42px;
+    width: 100%;
+    margin-left: 40px;
+    margin-top: -40px;
 }
 
 #master-section {
     position: relative;
     display: flex;
-    padding: 90px 0 240px 110px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 90px 0 100px 110px;
     border-bottom: 5px solid rgb(175, 0, 175);
     margin-bottom: 5px;
     align-items:center;
 }
 
-#section1 {
-
+#master-section > :last-child {
+    order: 1;
 }
 
-#section2 {
-
+#name {
+    margin-left: 20px;
+    font-size: 4em;
+    background: linear-gradient(45deg, rgba(0, 0, 0), rgba(150, 0, 150), rgb(0, 0, 0));
+    background-clip: text;
+    color: transparent;
 }
 
-#section3 {
-
-}
-
-#section4 {
-
+#photo-section {
+    padding-bottom: 20px;
 }
 
 /* Keyframes */
@@ -220,5 +232,8 @@ button:hover {
         box-shadow: 0 0 10px rgba(125, 0, 125, 0.7);
     } /* This code block sets the properties for "animation: pulse" */
 }
+
+/* Media Queries */
+@media screen and (min-width: 1600px) 
 
 /* Experimental Code */
