@@ -11,6 +11,10 @@ a {
     text-decoration: none;
 }
 
+article {
+    width: 400px;
+}
+
 article p,
 h2,
 #my-photo,
@@ -26,13 +30,13 @@ body {
 
 button {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    padding: 10px 20px 0 0;
+    padding: 5px 5px 0 0;
     padding-bottom: 0%;
     border: none;
     border-radius: 15px;
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
     background-color: rgb(90, 0, 90);
     color: #ffffffd7;
     box-shadow: 5px 5px 5px 2px rgb(45, 0, 45);
@@ -40,7 +44,7 @@ button {
 }
 
 button img {
-    max-height: 100px;
+    max-height: 50px;
     display: flex;
 }
 
@@ -66,8 +70,9 @@ h1 {
 }
 
 h2 {
-    display: inline;
-    font-size: 3em;
+    width: 100%;
+    transform: rotate(-1deg);
+    font-size: 60px;
 }
 
 h2, p {
@@ -90,7 +95,7 @@ li {
 }
 
 p {
-    margin: 10px;
+
 }
 
 strong {
@@ -119,26 +124,20 @@ button:hover {
     height: 100%;
 }
 
-.contain {
-    position: relative;
-}
-
 .container {
     display: flex;
     width: 100%;
     max-width: 350px;
     object-fit: cover;
-    margin: 20px 20px 20px 40%;
+    margin: 20px 20px 20px 5%;
 }
 
 .container #my-photo {
     width: 100%;
-    max-width: 350px;
-    min-width: 350px;
-    height: 450px;
-    object-fit: cover;
-    padding: 20px;
-    border-radius: 30%;
+    max-width: 200px;
+    min-width: 200px;
+    padding: 25px 20px 20px 20px;
+    border-radius: 50%;
 }
 
 .glow {
@@ -165,45 +164,47 @@ button:hover {
     min-width: 100px;
 }
 
-.overlay {
+/* .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(100, 100, 100, 0.7);
-}
+    background-color: rgba(100, 100, 100, 0.5);
+} */
 
 /* ID Selectors */
-#flex-end {
-    justify-content: flex-end;
-    margin-right: 50px;
-}
-
-#flex-start {
-    flex-direction: column;
-    justify-content: center;
-    align-content: flex-start;
-    max-width: 350px;
-    margin-left: 50px;
-}
-
-#section-1 {
+#article-container-1 {
     display: flex;
-    padding: 75px 0 40px 0;
+    flex-direction: column;
+    width: 300px;
+    padding-top: 42px;
+}
+
+#master-section {
+    position: relative;
+    display: flex;
+    padding: 90px 0 240px 110px;
     border-bottom: 5px solid rgb(175, 0, 175);
     margin-bottom: 5px;
-    justify-content: flex-start;
+    align-items:center;
 }
 
-/* #summary {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    min-width: 1000px;
-    border-radius: 15px;
-    padding: 20px;
-} */
+#section1 {
+
+}
+
+#section2 {
+
+}
+
+#section3 {
+
+}
+
+#section4 {
+
+}
 
 /* Keyframes */
 @keyframes pulse {
@@ -219,6 +220,3 @@ button:hover {
 }
 
 /* Experimental Code */
-#section-1 {
-    padding-top: 200px;
-}
