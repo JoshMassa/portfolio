@@ -28,6 +28,8 @@ nav {
 body {
     font-family:Arial, Helvetica, sans-serif;
     height: fit-content;
+    width: 1600px;
+    margin: 0 auto;
 }
 
 button {
@@ -158,7 +160,7 @@ button:hover {
 
 .header-container {
     display: flex;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     align-items: center;
     padding: 15px;
