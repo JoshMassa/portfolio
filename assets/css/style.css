@@ -1,8 +1,15 @@
+/* Variable Selector */
+:root {
+    --darkpurple: rgba(45, 0, 45);
+    --lightpurple: rgba(175, 0, 175);
+}
+
 /* Universal Selector */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 /* Combination Selectors */
@@ -22,7 +29,7 @@ p,
 #name {
     text-align: center;
     padding: 10px 5px;
-    text-shadow:3px 3px 3px rgba(45, 0, 45);
+    text-shadow:3px 3px 3px var(--darkpurple);
 }
 
 /* Element Selectors */
@@ -30,18 +37,13 @@ a {
     text-decoration: none;
 }
 
-body {
-    font-family:Arial, Helvetica, sans-serif;
-    width: 100%;
-}
-
 footer {
     display: flex;
     justify-content: center;
     padding: 30px;
-    background-color: rgb(50, 0, 50);
+    background-color: var(--darkpurple);
     color: white;
-    border-top: 5px solid rgb(175, 0, 175);
+    border-top: 5px solid var(--lightpurple);
 }
 
 h1 {
@@ -66,11 +68,6 @@ h1 {
 #name {
     font-size: 2em;
     text-align: center;
-}
-
-#photo-section {
-    display: flex;
-    flex-direction: column-reverse;
 }
 
 /* Media Queries */
