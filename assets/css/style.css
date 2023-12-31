@@ -2,6 +2,7 @@
 :root {
     --darkpurple: rgba(45, 0, 45);
     --lightpurple: rgba(175, 0, 175);
+    --silver: rgba(100, 100, 100, 0.7);
 }
 
 /* Universal Selector */
@@ -13,7 +14,9 @@
 }
 
 /* Combination Selectors */
-h2, p {
+h2,
+h2 + p,
+h2 + p + p {
     color: white;
 }
 
@@ -22,7 +25,7 @@ html, body {
     padding: 0;
     margin: 0;
     width: 100%;
-    background-color: grey;
+    background-color: var(--silver);
     border: none;
 }
 
@@ -34,7 +37,8 @@ p {
     z-index: 2;
 }
 
-p,
+h2 + p,
+h2 + p + p,
 #name {
     text-align: center;
     padding: 5px 0;
@@ -42,15 +46,6 @@ p,
 }
 
 /* Element Selectors */
-footer {
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-    background-color: var(--darkpurple);
-    color: white;
-    border-top: 5px solid var(--lightpurple);
-}
-
 h1 {
     font-size: 16px;
 }
@@ -60,13 +55,17 @@ h1 {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(45, 0, 45, 0.7);
+    background-color: var(--silver);
     z-index: 1;
 }
 
 /* Class Selectors */
 body div.nav-container {
     background-color: var(--darkpurple);
+}
+
+.desc-container {
+    background-color: #fff;
 }
 
 .intro-container {
@@ -130,6 +129,27 @@ body div .nav-container {
 }
 
 /* ID Selectors */
+#copy-date {
+    font-size: 10px;
+    margin: -5px 0 0 -5px;
+}
+
+#footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkpurple);
+    color: white;
+    border-top: 5px solid var(--lightpurple);
+}
+
+
+#footer-logo {
+    max-height: 200px;
+    max-width: 200px;
+}
+
 #location {
     display: flex;
     justify-content: center;
@@ -249,11 +269,6 @@ body div .nav-container {
         max-height: 40px;
         transition: all 0.3s ease;
     }
-    
-    /* #main-logo.larger {
-        max-width: 80px;
-        max-height: 80px;
-    } */
 }
 
 /* Experimental Code */
