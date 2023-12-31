@@ -12,19 +12,28 @@ menu.addEventListener("click", function() {
 const mainLogo = document.getElementById('main-logo');
 let isCompanyLogo = false;
 
-mainLogo.addEventListener('mouseover', function () {
-    toggleLogo(true);
-});
-
-mainLogo.addEventListener('mouseout', function () {
-    toggleLogo(false);
-});
-
-mainLogo.addEventListener('touchstart', function (event) {
-    event.preventDefault(); // Prevent default touch behavior
+mainLogo.addEventListener('click', function () {
     isCompanyLogo = !isCompanyLogo;
     toggleLogo(isCompanyLogo);
 });
+
+if (window.innerWidth > 1023) {
+    mainLogo.addEventListener('mouseover', function () {
+        toggleLogo(true);
+    });
+
+    mainLogo.addEventListener('mouseout', function () {
+        toggleLogo(false);
+    });
+} else {
+    mainLogo.addEventListener('touchstart', function (event) {
+        if (event.touches.length === 1) {
+            event.preventDefault();
+            isCompanyLogo = !isCompanyLogo;
+            toggleLogo(isCompanyLogo);
+        }
+    });
+}
 
 function toggleLogo(isCompanyLogo) {
     mainLogo.style.opacity = 0;
@@ -33,7 +42,6 @@ function toggleLogo(isCompanyLogo) {
         ? './assets/images/company-logo.png'
         : './assets/images/coffee-icon.png';
 
-    // Add or remove the 'larger' class based on the logo being displayed
     mainLogo.classList.toggle('larger', isCompanyLogo);
 
     requestAnimationFrame(() => {

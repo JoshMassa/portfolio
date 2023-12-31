@@ -37,7 +37,7 @@ p {
 p,
 #name {
     text-align: center;
-    padding: 10px 5px;
+    padding: 5px 0;
     text-shadow:3px 3px 3px var(--darkpurple);
 }
 
@@ -65,6 +65,10 @@ h1 {
 }
 
 /* Class Selectors */
+body div.nav-container {
+    background-color: var(--darkpurple);
+}
+
 .intro-container {
     padding-top: 25px;
     background-image: url(../images/intro-background.jpg);
@@ -72,6 +76,10 @@ h1 {
     background-repeat: no-repeat;
     background-position: center center;
     position: relative;
+}
+
+.material-icons {
+    margin: 0 5px 5px 0;
 }
 
 .menu-toggle .bar {
@@ -92,9 +100,9 @@ h1 {
     margin: 0 auto;
 }
 
-.nav-container {
+body div .nav-container {
     width: 100%;
-    background-color: var(--darkpurple);
+    background-color: var(--darkpurple) !important;
 }
 
 .nav-links {
@@ -122,6 +130,12 @@ h1 {
 }
 
 /* ID Selectors */
+#location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #main-logo {
     margin-left: 20px;
     max-width: 40px;
@@ -154,7 +168,7 @@ h1 {
 
 
 /* Media Queries */
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1023px) {
     .nav-container {
         position: relative;
     }
@@ -236,10 +250,10 @@ h1 {
         transition: all 0.3s ease;
     }
     
-    #main-logo.larger {
+    /* #main-logo.larger {
         max-width: 80px;
         max-height: 80px;
-    }
+    } */
 }
 
 /* Experimental Code */
