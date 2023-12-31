@@ -26,6 +26,14 @@ html, body {
     border: none;
 }
 
+#my-photo,
+#name,
+h2,
+p {
+    position: relative;
+    z-index: 2;
+}
+
 p,
 #name {
     text-align: center;
@@ -47,7 +55,25 @@ h1 {
     font-size: 16px;
 }
 
+/* Pseudo Element Selectors */
+.intro-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(45, 0, 45, 0.7);
+    z-index: 1;
+}
+
 /* Class Selectors */
+.intro-container {
+    padding-top: 25px;
+    background-image: url(../images/intro-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+}
+
 .menu-toggle .bar {
     width: 25px;
     height: 3px;
@@ -94,7 +120,6 @@ h1 {
     color: var(--lightpurple);
     transition: all 0.2s ease-out;
 }
-
 
 /* ID Selectors */
 #main-logo {
@@ -156,6 +181,7 @@ h1 {
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
+        z-index: 10;
     }
 
     .nav-links {
@@ -217,6 +243,3 @@ h1 {
 }
 
 /* Experimental Code */
-/* #company-logo {
-    display: none;
-} */
