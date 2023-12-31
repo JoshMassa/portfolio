@@ -32,27 +32,14 @@ mainLogo.addEventListener('touchend', function (event) {
 function toggleLogo(isMouseover) {
     mainLogo.style.opacity = 0;
 
-    // Set the new image source
     mainLogo.src = isMouseover
         ? './assets/images/company-logo.png'
         : './assets/images/coffee-icon.png';
 
-    if (isMouseover) {
-        // For transitioning to company logo
-        requestAnimationFrame(() => {
-            mainLogo.style.opacity = 1;
-        });
-    } else {
-        // For transitioning back to main logo
-        requestAnimationFrame(() => {
-            mainLogo.style.opacity = 1;
-            requestAnimationFrame(() => {
-                mainLogo.style.opacity = 0;
-                mainLogo.src = './assets/images/coffee-icon.png';
-                requestAnimationFrame(() => {
-                    mainLogo.style.opacity = 1;
-                });
-            });
-        });
-    }
+    mainLogo.addEventListener('transitionend', function onTransitionEnd() {
+        mainLogo.removeEventListener('transitionend', onTransitionEnd);
+
+        // Set opacity to 1 after the transition is complete
+        mainLogo.style.opacity = 1;
+    });
 }
