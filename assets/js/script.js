@@ -12,9 +12,12 @@ menu.addEventListener("click", function() {
 const mainLogo = document.getElementById('main-logo');
 let isCompanyLogo = false;
 
-mainLogo.addEventListener('click', function () {
-    isCompanyLogo = !isCompanyLogo;
-    toggleLogo(isCompanyLogo);
+mainLogo.addEventListener('mouseover', function () {
+    toggleLogo(true);
+});
+
+mainLogo.addEventListener('mouseout', function () {
+    toggleLogo(false);
 });
 
 mainLogo.addEventListener('touchstart', function (event) {
