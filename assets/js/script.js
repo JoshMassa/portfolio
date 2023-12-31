@@ -6,6 +6,9 @@ menu.addEventListener("click", function() {
     menuLinks.classList.toggle("active");
 })
 
+
+
+
 const mainLogo = document.getElementById('main-logo');
 
 mainLogo.addEventListener('mouseover', function () {
@@ -14,6 +17,16 @@ mainLogo.addEventListener('mouseover', function () {
 
 mainLogo.addEventListener('mouseout', function () {
     toggleLogo(false); // Pass false to indicate mouseout
+});
+
+mainLogo.addEventListener('touchstart', function (event) {
+    event.preventDefault(); // Prevent default touch behavior
+    toggleLogo(true);
+});
+
+mainLogo.addEventListener('touchend', function (event) {
+    event.preventDefault();
+    toggleLogo(false);
 });
 
 function toggleLogo(isMouseover) {
