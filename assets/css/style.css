@@ -117,7 +117,7 @@ h1 {
 }
 
 #name {
-    font-size: 2em;
+    font-size: 1.4em;
     text-align: center;
 }
 
@@ -202,6 +202,17 @@ h1 {
 
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #main-logo {
+        max-width: 40px;
+        max-height: 40px;
+        transition: all 0.3s ease;
+    }
+    
+    #main-logo.larger {
+        max-width: 80px;
+        max-height: 80px;
     }
 }
 

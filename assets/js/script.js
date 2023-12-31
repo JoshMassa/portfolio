@@ -10,36 +10,30 @@ menu.addEventListener("click", function() {
 
 
 const mainLogo = document.getElementById('main-logo');
+let isCompanyLogo = false;
 
-mainLogo.addEventListener('mouseover', function () {
-    toggleLogo(true);
-});
-
-mainLogo.addEventListener('mouseout', function () {
-    toggleLogo(false);
+mainLogo.addEventListener('click', function () {
+    isCompanyLogo = !isCompanyLogo;
+    toggleLogo(isCompanyLogo);
 });
 
 mainLogo.addEventListener('touchstart', function (event) {
-    event.preventDefault();
-    toggleLogo(true);
+    event.preventDefault(); // Prevent default touch behavior
+    isCompanyLogo = !isCompanyLogo;
+    toggleLogo(isCompanyLogo);
 });
 
-mainLogo.addEventListener('touchend', function (event) {
-    event.preventDefault();
-    toggleLogo(false);
-});
-
-function toggleLogo(isMouseover) {
+function toggleLogo(isCompanyLogo) {
     mainLogo.style.opacity = 0;
 
-    mainLogo.src = isMouseover
+    mainLogo.src = isCompanyLogo
         ? './assets/images/company-logo.png'
         : './assets/images/coffee-icon.png';
 
-    mainLogo.addEventListener('transitionend', function onTransitionEnd() {
-        mainLogo.removeEventListener('transitionend', onTransitionEnd);
+    // Add or remove the 'larger' class based on the logo being displayed
+    mainLogo.classList.toggle('larger', isCompanyLogo);
 
-        // Set opacity to 1 after the transition is complete
+    requestAnimationFrame(() => {
         mainLogo.style.opacity = 1;
     });
 }
