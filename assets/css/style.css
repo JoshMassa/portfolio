@@ -33,10 +33,6 @@ p,
 }
 
 /* Element Selectors */
-a {
-    text-decoration: none;
-}
-
 footer {
     display: flex;
     justify-content: center;
@@ -51,6 +47,49 @@ h1 {
 }
 
 /* Class Selectors */
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: white;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 0.2fr auto 1fr;
+    align-items: center;
+    height: 75px;
+    border-bottom: 5px solid var(--lightpurple);
+    max-width: 1720px;
+    margin: 0 auto;
+}
+
+.nav-container {
+    width: 100%;
+    background-color: var(--darkpurple);
+}
+
+.nav-links {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    list-style-type: none;
+    text-align: center;
+    width: 50%;
+    justify-self: end;
+}
+
+/* Pseudo Class Selectors */
+.nav-links:hover {
+    color: var(--lightpurple);
+    transition: all 0.2s ease-out;
+}
+
 
 /* ID Selectors */
 #my-photo {
@@ -70,7 +109,61 @@ h1 {
     text-align: center;
 }
 
+#navbar-logo {
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+
 /* Media Queries */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        position: relative;
+    }
+
+    .nav-menu {
+        display: grid;
+        grid-template-columns: auto;
+        background: var(--darkpurple);
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: 75px;
+        /* left: -100%;
+        opacity: 0; */
+        transition: all 0.5s ease;
+    }
+
+    #navbar-logo {
+        margin-left: 20px;
+    }
+
+    .nav-menu.active {
+        background: var(--darkpurple);
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links {
+        text-align: center;
+        line-height: 60px;
+        width: 100%;
+        display: table;
+    }
+
+    .nav-links:hover {
+        background-color: var(--lightpurple);
+        color: white;
+        transition: all 0.4s ease-out;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 320px) {
     
 }
