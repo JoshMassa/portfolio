@@ -80,11 +80,21 @@ backBtn.addEventListener("click", () => {
 
 function calculateScrollDistance() {
 
-    const baseScrollDistance = 950;
-    const minScreenSize = 320;
-    const maxScreenSize = 1440;
+    let scrollDistance;
 
-    const scaleFactor = Math.max(0.2468, (window.innerWidth - minScreenSize) / (maxScreenSize - minScreenSize));
+   if (window.matchMedia("(max-width: 320px)").matches) {
+       scrollDistance = getComputedStyle(document.documentElement)
+           .getPropertyValue('--scroll-distance-x-small')
+           .trim();
+   } else if (window.matchMedia("(min-width: 321px) and (max-width: 375px)").matches) {
+       scrollDistance = getComputedStyle(document.documentElement)
+           .getPropertyValue('--scroll-distance-medium')
+           .trim();
+   } else {
+       scrollDistance = getComputedStyle(document.documentElement)
+           .getPropertyValue('--scroll-distance-large')
+           .trim();
+   }
 
-    return baseScrollDistance * scaleFactor;
+   return parseFloat(scrollDistance);
 }
