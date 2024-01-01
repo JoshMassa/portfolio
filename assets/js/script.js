@@ -88,8 +88,12 @@ function calculateScrollDistance() {
            .trim();
    } else if (window.matchMedia("(min-width: 321px) and (max-width: 375px)").matches) {
        scrollDistance = getComputedStyle(document.documentElement)
-           .getPropertyValue('--scroll-distance-medium')
+           .getPropertyValue('--scroll-distance-small')
            .trim();
+   } else if (window.matchMedia("(min-width: 376px) and (max-width: 425px)").matches) {
+    scrollDistance = getComputedStyle(document.documentElement)
+        .getPropertyValue('--scroll-distance-medium')
+        .trim();
    } else {
        scrollDistance = getComputedStyle(document.documentElement)
            .getPropertyValue('--scroll-distance-large')

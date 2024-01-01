@@ -7,8 +7,8 @@
     --silver: rgba(100, 100, 100, 0.7);
     --offwhite: rgba(230, 230, 230);
     --scroll-distance-x-small: 230px;
-    --scroll-distance-small: 230px;
-    --scroll-distance-medium: 1200px;
+    --scroll-distance-small: 280px;
+    --scroll-distance-medium: 330px;
     --scroll-distance-large: 1450px;
 
     --scroll-distance: var(--scroll-distance-x-small);
@@ -27,6 +27,13 @@
 /* ********************* */
 /* Combination Selectors */
 /* ********************* */
+#backBtn,
+#nextBtn {
+    width: 50px;
+    cursor: pointer;
+    margin: 10px;
+}
+
 .desc-container,
 .work-container {
     background-color: var(--offwhite);
@@ -88,6 +95,10 @@ h3 {
 /* ************************ */
 /* Pseudo Element Selectors */
 /* ************************ */
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
 .intro-container::before {
     content: "";
     position: absolute;
@@ -103,6 +114,34 @@ h3 {
     padding: 10px 10px;
     text-align: center;
     font-size: 12px;
+}
+
+.gallery {
+    width: 850px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.gallery div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 30px;
+    padding: 10px;
+    flex: none;
+}
+
+.gallery div img {
+    width: 100%;
+    width: 200px;
+    transition: transform 0.3s;
+}
+
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
 }
 
 .intro-container {
@@ -152,6 +191,11 @@ h3 {
 /* ********************** */
 /* Pseudo Class Selectors */
 /* ********************** */
+.gallery div img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 #navbar-logo:hover #main-logo {
     transform: scale(3);
 }
@@ -224,57 +268,57 @@ h3 {
 /* ***************** */
 /* Experimental Code */
 /* ***************** */
-.gallery {
-    width: 850px;
-    display: flex;
-    overflow-x: scroll;
-}
 
-.gallery div {
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 30px;
-    padding: 10px;
-    flex: none;
-}
-
-.gallery div img {
-    width: 100%;
-    width: 200px;
-    filter: grayscale(100);
-    transition: transform 0.3s;
-}
-
-.gallery-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 5px;
-}
-
-.gallery::-webkit-scrollbar {
-    display: none;
-}
-
-#backBtn,
-#nextBtn {
-    width: 50px;
-    cursor: pointer;
-    margin: 10px;
-}
-
-.gallery div img:hover {
-    filter: grayscale(0);
-    cursor: pointer;
-    transform: scale(1.1);
-}
 /* The Experimental Code section should be empty when webpage is finalized */
 
 /* ************* */
 /* Media Queries */
 /* ************* */
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 1900px) and (max-width: 2560px) {
+    .gallery {
+        width: 1750px;
+    }
+
+    .gallery div img {
+        width: 400px;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1899px) {
+    .gallery {
+        width: 1300px;
+        display: flex;
+        overflow-x: scroll;
+    }
+
+    .gallery div img {
+        width: 400px;
+    }
+
+    #backBtn {
+        margin: 0 25px;
+    }
+
+    #nextBtn {
+        margin-left: 30px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .gallery div img {
+        width: 400px;
+    }
+
+    #backBtn {
+        margin: 0 25px;
+    }
+
+    #nextBtn {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
     .nav-container {
         position: relative;
     }
@@ -357,16 +401,50 @@ h3 {
     }
 }
 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .gallery div img {
+        width: 400px;
+    }
+
+    #backBtn {
+        margin-left: 20px;
+    }
+
+    #nextBtn {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .gallery div img {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+    :root {
+        --scroll-distance: var(--scroll-distance-medium);
+    }
+
+    .gallery div img {
+        width: 300px;
+    }
+
+    .gallery-wrap {
+        margin-left: 10px;
+    }
+}
+
 @media screen and (min-width: 321px) and (max-width: 375px) {
     :root {
         --scroll-distance: var(--scroll-distance-small);
     }
 
     .gallery div img {
-        width: 100%;
-        width: 300px;
-        height: auto;
-        filter: grayscale(100);
-        transition: transform 0.3s;
+        width: 250px;
+    }
+
+    .gallery-wrap {
+        margin-left: 10px;
     }
 }
