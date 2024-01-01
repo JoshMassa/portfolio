@@ -70,8 +70,17 @@ body div.nav-container {
     background-color: var(--darkpurple);
 }
 
+/* div {
+    max-width: 100%;
+} */
+
 h1 {
     font-size: 16px;
+}
+
+h3 {
+    padding-top: 20px;
+    text-align: center;
 }
 
 /* ************************ */
@@ -138,10 +147,8 @@ h1 {
     justify-self: end;
 }
 
-.project-images {
-    max-width: 75%;
-    height: auto;
-    margin-top: 20px;
+.work-container {
+    background: #191919;
 }
 
 /* ********************** */
@@ -216,16 +223,13 @@ h1 {
     cursor: pointer;
 }
 
-#projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 /* ************* */
 /* Media Queries */
 /* ************* */
+@media screen and (min-width: 768) and (max-width: 1440px) {
+    
+}
+
 @media screen and (max-width: 1023px) {
     .nav-container {
         position: relative;
@@ -313,4 +317,51 @@ h1 {
 /* Experimental Code */
 /* ***************** */
 
+
+/* When finished, place this code into 1023px media query */
+.gallery {
+    width: 850px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.gallery div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 30px;
+    padding: 10px;
+    flex: none;
+}
+
+.gallery div img {
+    width: 100%;
+    width: 200px;
+    filter: grayscale(100);
+    transition: transform 0.3s;
+}
+
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+#backBtn,
+#nextBtn {
+    width: 50px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.gallery div img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
+}
 /* The Experimental Code section should be empty when webpage is finalized */

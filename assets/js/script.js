@@ -1,3 +1,6 @@
+// // // // // // //      \\ \\ \\ \\ \\ \\ \\ \\
+// // // //   Script for Nav Bar Menu  \\ \\ \\ \\
+// // // // // // //        \\ \\ \\ \\ \\ \\ \\ \\
 const menu = document.querySelector("#mobile-menu");
 const menuLinks = document.querySelector(".nav-menu");
 
@@ -7,8 +10,9 @@ menu.addEventListener("click", function() {
 })
 
 
-
-
+// // // // // // //      \\ \\ \\ \\ \\ \\ \\ \\
+// // // //   Script for Logo Toggle   \\ \\ \\ \\
+// // // // // // //        \\ \\ \\ \\ \\ \\ \\ \\
 const mainLogo = document.getElementById('main-logo');
 let isCompanyLogo = false;
 
@@ -47,4 +51,40 @@ function toggleLogo(isCompanyLogo) {
     requestAnimationFrame(() => {
         mainLogo.style.opacity = 1;
     });
+}
+
+// // // // // // //      \\ \\ \\ \\ \\ \\ \\ \\
+// // // //  Script for Gallery Scroll \\ \\ \\ \\
+// // // // // // //        \\ \\ \\ \\ \\ \\ \\ \\
+let scrollContainer = document.querySelector(".gallery")
+let backBtn = document.getElementById("backBtn")
+let nextBtn = document.getElementById("nextBtn")
+
+scrollContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+    scrollContainer.style.scrollBehavior = "auto";
+});
+
+nextBtn.addEventListener("click", () => {
+    scrollContainer.style.scrollBehavior = "smooth";
+    const scrollDistance =calculateScrollDistance();
+    scrollContainer.scrollLeft += scrollDistance;
+})
+
+backBtn.addEventListener("click", () => {
+    scrollContainer.style.scrollBehavior = "smooth";
+    const scrollDistance =calculateScrollDistance();
+    scrollContainer.scrollLeft -= scrollDistance;
+})
+
+function calculateScrollDistance() {
+
+    const baseScrollDistance = 950;
+    const minScreenSize = 320;
+    const maxScreenSize = 1440;
+
+    const scaleFactor = Math.max(0.2468, (window.innerWidth - minScreenSize) / (maxScreenSize - minScreenSize));
+
+    return baseScrollDistance * scaleFactor;
 }
