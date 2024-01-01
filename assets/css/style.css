@@ -35,7 +35,8 @@
 }
 
 .desc-container,
-.work-container {
+.work-container,
+.exp-container {
     background-color: var(--offwhite);
 }
 
@@ -72,7 +73,7 @@ h2 + p + p,
 
 .navbar,
 .intro-container,
-.desc-container {
+.exp-container {
     border-bottom: 5px solid var(--lightpurple);
 }
 
@@ -88,6 +89,10 @@ h1 {
 }
 
 h3 {
+    margin-bottom: 10px;
+}
+
+h4 {
     padding-top: 20px;
     text-align: center;
 }
@@ -110,10 +115,40 @@ h3 {
 /* *************** */
 /* Class Selectors */
 /* *************** */
-.desc-container {
+.button-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+}
+
+.button-container button {
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    border-style: none;
+    background-color: rgb(17, 149, 186);
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(3, 6, 7, 0.7);
+    box-shadow: 2px 2px 5px rgba(3, 6, 7, 0.7);
+}
+
+.desc-container,
+.exp-container {
     padding: 10px 10px;
     text-align: center;
     font-size: 12px;
+}
+
+.desc-container,
+.exp-container,
+h4 {
+    color: var(--darkpurple)
+}
+
+.exp-container {
+
 }
 
 .gallery {
@@ -191,6 +226,10 @@ h3 {
 /* ********************** */
 /* Pseudo Class Selectors */
 /* ********************** */
+button:hover {
+    background-color: rgb(7, 63, 78);
+}
+
 .gallery div img:hover {
     cursor: pointer;
     transform: scale(1.1);
@@ -211,6 +250,11 @@ h3 {
 #copy-date {
     font-size: 10px;
     margin: -5px 0 0 -5px;
+}
+
+#desc-article p:first-child {
+    font-size: 20px;
+    text-shadow: 3px 3px 6px rgba(45, 0, 45, 0.7);
 }
 
 #footer-container {
