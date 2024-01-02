@@ -35,6 +35,19 @@
 }
 
 .desc-container,
+.exp-container {
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.desc-container,
+.exp-container,
+h4 {
+    color: var(--darkpurple)
+}
+
+.desc-container,
 .work-container,
 .exp-container {
     background-color: var(--offwhite);
@@ -42,7 +55,8 @@
 
 h2,
 h2 + p,
-h2 + p + p {
+h2 + p + p,
+h5 {
     color: #fff;
 }
 
@@ -68,6 +82,13 @@ h2 + p + p,
 #name {
     text-align: center;
     padding: 5px 0;
+}
+
+h2 + p,
+h2 + p + p,
+#name,
+h5,
+.about-container p {
     text-shadow:3px 3px 3px var(--darkpurple);
 }
 
@@ -97,6 +118,12 @@ h4 {
     text-align: center;
 }
 
+h5 {
+    font-size: 30px;
+    margin-left: 45px;
+    cursor: pointer;
+}
+
 /* ************************ */
 /* Pseudo Element Selectors */
 /* ************************ */
@@ -115,10 +142,35 @@ h4 {
 /* *************** */
 /* Class Selectors */
 /* *************** */
+.about-container {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, black 30%, grey);
+    margin-bottom: -4px;
+}
+
+.about-container article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+}
+
+.about-container img {
+    width: 100px;
+}
+
+.about-container p {
+    font-size: 10px;
+    color: var(--offwhite);
+    text-align: center;
+    margin-right: 10px;
+}
+
 .button-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    /* justify-content: center; */
     align-items: center;
     text-align: center;
 }
@@ -134,30 +186,13 @@ h4 {
     box-shadow: 2px 2px 5px rgba(3, 6, 7, 0.7);
 }
 
-.desc-container,
-.exp-container {
-    padding: 10px 10px;
-    text-align: center;
-    font-size: 12px;
-}
-
-.desc-container,
-.exp-container,
-h4 {
-    color: var(--darkpurple)
-}
-
-.exp-container {
-
-}
-
 .gallery {
     width: 850px;
     display: flex;
     overflow-x: scroll;
 }
 
-.gallery div {
+.gallery figure {
     width: 100%;
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -166,7 +201,7 @@ h4 {
     flex: none;
 }
 
-.gallery div img {
+.gallery figure img {
     width: 100%;
     width: 200px;
     transition: transform 0.3s;
@@ -177,6 +212,10 @@ h4 {
     align-items: center;
     justify-content: center;
     margin-left: 5px;
+}
+
+.hidden {
+    display: none;
 }
 
 .intro-container {
@@ -233,6 +272,10 @@ button:hover {
 .gallery div img:hover {
     cursor: pointer;
     transform: scale(1.1);
+}
+
+h5:hover {
+    color: var(--silver);
 }
 
 #navbar-logo:hover #main-logo {

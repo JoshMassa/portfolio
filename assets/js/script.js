@@ -102,3 +102,22 @@ function calculateScrollDistance() {
 
    return parseFloat(scrollDistance);
 }
+
+// // // // // // //      \\ \\ \\ \\ \\ \\ \\ \\
+// // // // //  Script for About Me \\ \\ \\ \\ \\
+// // // // // // //        \\ \\ \\ \\ \\ \\ \\ \\
+document.getElementById('about-heading').addEventListener('click', function() {
+    toggleVisibility();
+});
+
+document.getElementById('about-content').addEventListener('click', function() {
+    toggleVisibility();
+});
+
+function toggleVisibility() {
+    var aboutHeading = document.getElementById('about-heading');
+    var aboutContent = document.getElementById('about-content');
+    
+    aboutHeading.classList.toggle('hidden');
+    aboutContent.classList.toggle('hidden');
+}
