@@ -6,6 +6,7 @@
     --lightpurple: rgba(175, 0, 175);
     --silver: rgba(100, 100, 100, 0.7);
     --offwhite: rgba(230, 230, 230);
+    --lightblue: rgb(17, 149, 186);
     --scroll-distance-x-small: 230px;
     --scroll-distance-small: 280px;
     --scroll-distance-medium: 330px;
@@ -49,15 +50,21 @@ h4 {
 
 .desc-container,
 .work-container,
-.exp-container {
+.exp-container,
+.contact-container {
     background-color: var(--offwhite);
 }
 
 h2,
 h2 + p,
 h2 + p + p,
-h5 {
+.about-container h5 {
     color: #fff;
+}
+
+h3,
+h4 {
+    text-shadow:2px 2px 5px var(--darkpurple);
 }
 
 html, body {
@@ -65,7 +72,7 @@ html, body {
     padding: 0;
     margin: 0;
     width: 100%;
-    background-color: var(--silver);
+    background-color: var(--offwhite);
     border: none;
 }
 
@@ -87,7 +94,7 @@ h2 + p + p,
 h2 + p,
 h2 + p + p,
 #name,
-h5,
+.about-container h5,
 .about-container p {
     text-shadow:3px 3px 3px var(--darkpurple);
 }
@@ -116,12 +123,6 @@ h3 {
 h4 {
     padding-top: 20px;
     text-align: center;
-}
-
-h5 {
-    font-size: 30px;
-    margin-left: 45px;
-    cursor: pointer;
 }
 
 /* ************************ */
@@ -156,6 +157,12 @@ h5 {
     order: 2;
 }
 
+.about-container h5 {
+    font-size: 30px;
+    margin-left: 45px;
+    cursor: pointer;
+}
+
 .about-container img {
     width: 100px;
     vertical-align: bottom;
@@ -180,10 +187,44 @@ h5 {
     padding: 5px;
     margin: 5px;
     border-style: none;
-    background-color: rgb(17, 149, 186);
+    background-color: var(--lightblue);
     color: #fff;
     text-shadow: 2px 2px 2px rgba(3, 6, 7, 0.7);
     box-shadow: 2px 2px 5px rgba(3, 6, 7, 0.7);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px 10px 0 10px;
+    border: 3px solid var(--lightblue);
+    border-radius: 10px;
+}
+
+.contact-container h6 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+label {
+    display: block;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    
+    box-sizing: border-box;
 }
 
 .gallery {
@@ -269,12 +310,12 @@ button:hover {
     background-color: rgb(7, 63, 78);
 }
 
-.gallery div img:hover {
+.gallery figure img:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
 
-h5:hover {
+.about-container h5:hover {
     color: var(--silver);
 }
 

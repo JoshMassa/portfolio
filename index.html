@@ -86,7 +86,22 @@
         </section>
 
         <section class="contact-container">
-            <p>Let's Collaborate!</p>
+            <h5>Let's Collaborate!</h5><br>
+            <h6>Take a brief moment to fill out your information so we can make the magic happen!</h6>
+            <article class="form-container">
+            <form action="submit.php" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+            </article>
         </section>
 
     </main>
