@@ -33,7 +33,7 @@
                 <img src="./assets/images/headshot.jpg" alt="my photo">
             </figure>
             <article>
-                <h2 id="name">Joshua Massa-Pelletier</h2>
+                <h2 id="my-name">Joshua Massa-Pelletier</h2>
                 <p>Full-Stack Web Developer</p>
                 <p id="location"><i class="material-icons">location_city</i>Meriden, CT, USA</p>
             </article>
@@ -86,20 +86,23 @@
         </section>
 
         <section class="contact-container">
-            <h5>Let's Collaborate!</h5><br>
+            <h5>Let's Collaborate</h5><br>
             <h6>Take a brief moment to fill out your information so we can make the magic happen!</h6>
             <article class="form-container">
-            <form action="submit.php" method="post">
+            <form>
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+                
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" pattern="1 \[0-9]{3}\-[0-9]{3}-[0-9]{4}" placeholder="+1 XXX-XXX-XXXX" required>
 
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Leave A Brief Message Detailing Reason For Contact" required></textarea>
 
-                <input type="submit" value="Submit">
+                <input id="submit-button" type="submit" value="Submit">
             </form>
             </article>
         </section>
