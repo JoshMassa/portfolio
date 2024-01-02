@@ -121,3 +121,16 @@ function toggleVisibility() {
     aboutHeading.classList.toggle('hidden');
     aboutContent.classList.toggle('hidden');
 }
+
+// // // // // // //      \\ \\ \\ \\ \\ \\ \\ \\
+// // //  Script for Smooth Scroll Navbar \\ \\ \\
+// // // // // // //        \\ \\ \\ \\ \\ \\ \\ \\
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
