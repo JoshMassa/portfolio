@@ -67,6 +67,14 @@ h4 {
     text-shadow:2px 2px 5px var(--darkpurple);
 }
 
+#horiseon-img,
+#landing-img,
+#css-img,
+#label-img {
+    position: relative;
+    display: inline-block;
+}
+
 html, body {
     min-width: 320px;
     padding: 0;
@@ -99,6 +107,14 @@ h2 + p + p,
     text-shadow:3px 3px 3px var(--darkpurple);
 }
 
+#name,
+#email,
+#phone {
+    border: none;
+    border-bottom: solid 3px rgba(15, 15, 15, 0.1);
+    padding: 5px;
+}
+
 .navbar,
 .intro-container,
 .exp-container {
@@ -110,6 +126,13 @@ h2 + p + p,
 /* ***************** */
 body div.nav-container {
     background-color: var(--darkpurple);
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto;
+    text-align: center;
+    padding: 10px;
 }
 
 h1 {
@@ -125,11 +148,43 @@ h4 {
     text-align: center;
 }
 
+input {
+    border-radius: 3px;
+    background-color: transparent;
+    outline: 0 none;
+    appearance: none;
+    text-align: center;
+    border-radius: 0;
+}
+
+label {
+    display: block;
+    padding: 10px;
+}
+
+textarea {
+    border-radius: 3px;
+    outline: 0 none;
+    padding: 15px 5px 5px 5px;
+    text-align: center;
+    justify-content: center;
+}
+
 /* ************************ */
 /* Pseudo Element Selectors */
 /* ************************ */
+#css-img::after {
+    content: "CSS Cheatsheet";
+    margin-left: -25px;
+}
+
 .gallery::-webkit-scrollbar {
     display: none;
+}
+
+#horiseon-img::after {
+    content: "Horiseon Refactor";
+    margin-left: -20px;
 }
 
 .intro-container::before {
@@ -138,6 +193,16 @@ h4 {
     inset: 0;
     background-color: var(--silver);
     z-index: 1;
+}
+
+#label-img::after {
+    content: "Nutrition Label";
+    margin-left: -30px;
+}
+
+#landing-img::after {
+    content: "Landing Page";
+    margin-left: -32px;
 }
 
 /* *************** */
@@ -208,73 +273,6 @@ h4 {
 .contact-container h6 {
     text-align: center;
     margin-bottom: 10px;
-}
-
-form {
-    display: grid;
-    grid-template-columns: auto;
-    text-align: center;
-    padding: 10px;
-}
-
-label {
-    display: block;
-    padding: 10px;
-}
-
-input {
-    border-radius: 3px;
-    background-color: transparent;
-    outline: 0 none;
-    appearance: none;
-    text-align: center;
-    border-radius: 0;
-}
-
-input:focus::placeholder {
-    color: transparent;
-}
-
-textarea {
-    border-radius: 3px;
-    outline: 0 none;
-    padding: 15px 5px 5px 5px;
-    text-align: center;
-    justify-content: center;
-}
-
-textarea:focus::placeholder {
-    color: transparent;
-}
-
-#name,
-#email,
-#phone {
-    border: none;
-    border-bottom: solid 3px rgba(15, 15, 15, 0.1);
-    padding: 5px;
-}
-
-#name:hover,
-#email:hover,
-#phone:hover {
-    border-color: var(--lightpurple);
-}
-
-#submit-button {
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 10px;
-    border-style: none;
-    background-color: var(--lightpurple);
-    color: #fff;
-    font-weight: 700;
-    box-shadow: 2px 2px 5px 2px rgba(3, 6, 7, 0.7);
-    text-shadow: 2px 2px 2px rgba(45, 0, 45, 0.7);
-}
-
-#submit-button:hover {
-    background-color: rgba(120, 0, 120);
 }
 
 .gallery {
@@ -356,8 +354,17 @@ textarea:focus::placeholder {
 /* ********************** */
 /* Pseudo Class Selectors */
 /* ********************** */
+.about-container h5:hover {
+    color: var(--silver);
+}
+
 button:hover {
     background-color: rgb(7, 63, 78);
+}
+
+#desc-article p:first-child {
+    font-size: 20px;
+    text-shadow: 3px 3px 6px rgba(45, 0, 45, 0.7);
 }
 
 .gallery figure img:hover {
@@ -365,17 +372,79 @@ button:hover {
     transform: scale(1.1);
 }
 
-.about-container h5:hover {
-    color: var(--silver);
+#horiseon-img::after,
+#landing-img::after,
+#css-img::after,
+#label-img::after {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -40%);
+    color: white;
+    font-size: 12px;
+    background-color: var(--lightpurple);
+    padding: 10px;
+    text-align: center;
+    text-shadow:2px 2px 5px var(--darkpurple);
+    box-shadow: 2px 2px 5px rgba(3, 6, 7, 0.7);
+}
+
+#horiseon-img::before,
+#landing-img::before,
+#css-img::before,
+#label-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 92%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--lightpurple)
+}
+
+#name:hover,
+#email:hover,
+#phone:hover {
+    border-color: var(--lightpurple);
+}
+
+.nav-links:hover {
+    color: var(--lightpurple);
+    transition: all 0.2s ease-out;
 }
 
 #navbar-logo:hover #main-logo {
     transform: scale(3);
 }
 
-.nav-links:hover {
-    color: var(--lightpurple);
-    transition: all 0.2s ease-out;
+#submit-button:hover {
+    background-color: rgba(120, 0, 120);
+}
+
+/* ********************** */
+/* Combo Pseudo Selectors */
+/* ********************** */
+#horiseon-img:hover::after,
+#landing-img:hover::after,
+#css-img:hover::after,
+#label-img:hover::after {
+    display: none;
+}
+
+#horiseon-img:hover::before,
+#landing-img:hover::before,
+#css-img:hover::before,
+#label-img:hover::before {
+    display: none;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+textarea:focus::placeholder {
+    color: transparent;
 }
 
 /* ************ */
@@ -384,11 +453,6 @@ button:hover {
 #copy-date {
     font-size: 10px;
     margin: -5px 0 0 -5px;
-}
-
-#desc-article p:first-child {
-    font-size: 20px;
-    text-shadow: 3px 3px 6px rgba(45, 0, 45, 0.7);
 }
 
 #footer-container {
@@ -443,83 +507,23 @@ button:hover {
     cursor: pointer;
 }
 
+#submit-button {
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: var(--lightpurple);
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 2px 2px 5px 2px rgba(3, 6, 7, 0.7);
+    text-shadow: 2px 2px 2px rgba(45, 0, 45, 0.7);
+}
+
 /* ***************** */
 /* Experimental Code */
 /* ***************** */
 
-#horiseon-img,
-#landing-img,
-#css-img,
-#label-img {
-    position: relative;
-    display: inline-block;
-}
 
-#horiseon-img::before,
-#landing-img::before,
-#css-img::before,
-#label-img::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 98%;
-    height: 92%;
-    background: rgba(0, 0, 0, 0.5);
-    border: 3px solid var(--lightpurple)
-}
-
-#horiseon-img::after,
-#landing-img::after,
-#css-img::after,
-#label-img::after {
-    position: absolute;
-    top: 50%;
-    left: 40%;
-    transform: translate(-50%, -40%);
-    color: white;
-    font-size: 12px;
-    background-color: var(--lightpurple);
-    padding: 10px;
-    text-align: center;
-    text-shadow:2px 2px 5px var(--darkpurple);
-    box-shadow: 2px 2px 5px rgba(3, 6, 7, 0.7);
-}
-
-#horiseon-img:hover::before,
-#landing-img:hover::before,
-#css-img:hover::before,
-#label-img:hover::before {
-    display: none;
-}
-
-#horiseon-img:hover::after,
-#landing-img:hover::after,
-#css-img:hover::after,
-#label-img:hover::after {
-    display: none;
-}
-
-
-#horiseon-img::after {
-    content: "Horiseon Refactor";
-    margin-left: -20px;
-}
-
-#landing-img::after {
-    content: "Landing Page";
-    margin-left: -32px;
-}
-
-#css-img::after {
-    content: "CSS Cheatsheet";
-    margin-left: -25px;
-}
-
-#label-img::after {
-    content: "Nutrition Label";
-    margin-left: -30px;
-}
 
 
 /* The Experimental Code section should be empty when webpage is finalized */
