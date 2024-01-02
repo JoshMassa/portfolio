@@ -134,3 +134,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+
+
+
+
+
+
+
+var overlays = document.getElementsByClassName('image-overlay');
+var shouldShowOverlay = true;
+
+for (let i = 0; i < overlays.length; i++) {
+ overlays[i].addEventListener('click', function(event) {
+   event.stopPropagation();
+   if (shouldShowOverlay) {
+     this.classList.add('hide');
+   }
+   shouldShowOverlay = false;
+ });
+}
+
+document.addEventListener('click', function() {
+ if (!shouldShowOverlay) {
+   for (let i = 0; i < overlays.length; i++) {
+     overlays[i].classList.remove('hide');
+   }
+ }
+ shouldShowOverlay = true;
+});

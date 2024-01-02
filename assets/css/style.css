@@ -7,7 +7,7 @@
     --silver: rgba(100, 100, 100, 0.7);
     --offwhite: rgba(230, 230, 230);
     --lightblue: rgb(17, 149, 186);
-    --scroll-distance-x-small: 230px;
+    --scroll-distance-x-small: 226px;
     --scroll-distance-small: 280px;
     --scroll-distance-medium: 330px;
     --scroll-distance-large: 1450px;
@@ -67,10 +67,7 @@ h4 {
     text-shadow:2px 2px 5px var(--darkpurple);
 }
 
-#horiseon-img,
-#landing-img,
-#css-img,
-#label-img {
+.image-container {
     position: relative;
     display: inline-block;
 }
@@ -173,18 +170,8 @@ textarea {
 /* ************************ */
 /* Pseudo Element Selectors */
 /* ************************ */
-#css-img::after {
-    content: "CSS Cheatsheet";
-    margin-left: -25px;
-}
-
 .gallery::-webkit-scrollbar {
     display: none;
-}
-
-#horiseon-img::after {
-    content: "Horiseon Refactor";
-    margin-left: -20px;
 }
 
 .intro-container::before {
@@ -193,16 +180,6 @@ textarea {
     inset: 0;
     background-color: var(--silver);
     z-index: 1;
-}
-
-#label-img::after {
-    content: "Nutrition Label";
-    margin-left: -30px;
-}
-
-#landing-img::after {
-    content: "Landing Page";
-    margin-left: -32px;
 }
 
 /* *************** */
@@ -372,35 +349,46 @@ button:hover {
     transform: scale(1.1);
 }
 
-#horiseon-img::after,
-#landing-img::after,
-#css-img::after,
-#label-img::after {
+.overlay {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 97%;
+    height: 96%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--lightpurple);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.overlay p {
+    position: absolute;
+    color: white;
+    padding: 10px;
+    text-align: center;
     top: 50%;
     left: 40%;
     transform: translate(-50%, -40%);
-    color: white;
-    font-size: 12px;
     background-color: var(--lightpurple);
-    padding: 10px;
-    text-align: center;
     text-shadow:2px 2px 5px var(--darkpurple);
     box-shadow: 2px 2px 5px rgba(3, 6, 7, 0.7);
 }
 
-#horiseon-img::before,
-#landing-img::before,
-#css-img::before,
-#label-img::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 98%;
-    height: 92%;
-    background: rgba(0, 0, 0, 0.5);
-    border: 3px solid var(--lightpurple)
+#overlay1 p {
+    margin-left: -30px;
+}
+
+#overlay2 p,
+#overlay4 p {
+    margin-left: -40px;
+}
+
+#overlay3 p {
+    margin-left: -33px;
+}
+
+.hide {
+    display: none;
 }
 
 #name:hover,
@@ -425,20 +413,6 @@ button:hover {
 /* ********************** */
 /* Combo Pseudo Selectors */
 /* ********************** */
-#horiseon-img:hover::after,
-#landing-img:hover::after,
-#css-img:hover::after,
-#label-img:hover::after {
-    display: none;
-}
-
-#horiseon-img:hover::before,
-#landing-img:hover::before,
-#css-img:hover::before,
-#label-img:hover::before {
-    display: none;
-}
-
 input:focus::placeholder {
     color: transparent;
 }
