@@ -8,8 +8,8 @@
     --offwhite: rgba(230, 230, 230);
     --lightblue: rgb(17, 149, 186);
     --scroll-distance-x-small: 226px;
-    --scroll-distance-small: 280px;
-    --scroll-distance-medium: 330px;
+    --scroll-distance-small: 275px;
+    --scroll-distance-medium: 325px;
     --scroll-distance-large: 1450px;
 
     --scroll-distance: var(--scroll-distance-x-small);
@@ -346,7 +346,6 @@ button:hover {
 
 .gallery figure img:hover {
     cursor: pointer;
-    transform: scale(1.1);
 }
 
 .overlay {
@@ -664,6 +663,22 @@ textarea:focus::placeholder {
     .gallery-wrap {
         margin-left: 10px;
     }
+
+    #overlay1 p {
+        margin-left: -70px;
+    }
+    
+    #overlay2 p {
+        margin-left: -79px;
+    }
+    
+    #overlay3 p {
+        margin-left: -71px;
+    }
+
+    #overlay4 p {
+        margin-left: -78px;
+    }
 }
 
 @media screen and (min-width: 321px) and (max-width: 375px) {
@@ -677,5 +692,21 @@ textarea:focus::placeholder {
 
     .gallery-wrap {
         margin-left: 10px;
+    }
+
+    #overlay1 p {
+        margin-left: -50px;
+    }
+    
+    #overlay2 p {
+        margin-left: -60px;
+    }
+    
+    #overlay3 p {
+        margin-left: -53px;
+    }
+
+    #overlay4 p {
+        margin-left: -58px;
     }
 }
