@@ -447,6 +447,81 @@ button:hover {
 /* Experimental Code */
 /* ***************** */
 
+#horiseon-img,
+#landing-img,
+#css-img,
+#label-img {
+    position: relative;
+    display: inline-block;
+}
+
+#horiseon-img::before,
+#landing-img::before,
+#css-img::before,
+#label-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 92%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--lightpurple)
+}
+
+#horiseon-img::after,
+#landing-img::after,
+#css-img::after,
+#label-img::after {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -40%);
+    color: white;
+    font-size: 12px;
+    background-color: var(--lightpurple);
+    padding: 10px;
+    text-align: center;
+    text-shadow:2px 2px 5px var(--darkpurple);
+    box-shadow: 2px 2px 5px rgba(3, 6, 7, 0.7);
+}
+
+#horiseon-img:hover::before,
+#landing-img:hover::before,
+#css-img:hover::before,
+#label-img:hover::before {
+    display: none;
+}
+
+#horiseon-img:hover::after,
+#landing-img:hover::after,
+#css-img:hover::after,
+#label-img:hover::after {
+    display: none;
+}
+
+
+#horiseon-img::after {
+    content: "Horiseon Refactor";
+    margin-left: -20px;
+}
+
+#landing-img::after {
+    content: "Landing Page";
+    margin-left: -32px;
+}
+
+#css-img::after {
+    content: "CSS Cheatsheet";
+    margin-left: -25px;
+}
+
+#label-img::after {
+    content: "Nutrition Label";
+    margin-left: -30px;
+}
+
+
 /* The Experimental Code section should be empty when webpage is finalized */
 
 /* ************* */
@@ -457,7 +532,7 @@ button:hover {
         width: 1750px;
     }
 
-    .gallery div img {
+    .gallery figure img {
         width: 400px;
     }
 }
@@ -469,7 +544,7 @@ button:hover {
         overflow-x: scroll;
     }
 
-    .gallery div img {
+    .gallery figure img {
         width: 400px;
     }
 
@@ -483,7 +558,7 @@ button:hover {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
-    .gallery div img {
+    .gallery figure img {
         width: 400px;
     }
 
@@ -580,7 +655,7 @@ button:hover {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .gallery div img {
+    .gallery figure img {
         width: 400px;
     }
 
@@ -594,7 +669,7 @@ button:hover {
 }
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
-    .gallery div img {
+    .gallery figure img {
         width: 300px;
     }
 }
@@ -604,7 +679,7 @@ button:hover {
         --scroll-distance: var(--scroll-distance-medium);
     }
 
-    .gallery div img {
+    .gallery figure img {
         width: 300px;
     }
 
@@ -618,7 +693,7 @@ button:hover {
         --scroll-distance: var(--scroll-distance-small);
     }
 
-    .gallery div img {
+    .gallery figure img {
         width: 250px;
     }
 
