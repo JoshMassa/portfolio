@@ -135,13 +135,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
-
-
-
-
-
-
+// // // // // // //      \\ \\ \\ \\ \\ \\ \\ \\
+// // //  Script for Project Img Overlay  \\ \\ \\
+// // // // // // //        \\ \\ \\ \\ \\ \\ \\ \\
 var overlays = document.getElementsByClassName('image-overlay');
 var shouldShowOverlay = true;
 
