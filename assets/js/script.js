@@ -86,11 +86,11 @@ function calculateScrollDistance() {
        scrollDistance = getComputedStyle(document.documentElement)
            .getPropertyValue('--scroll-distance-x-small')
            .trim();
-   } else if (window.matchMedia("(min-width: 321px) and (max-width: 375px)").matches) {
+   } else if (window.matchMedia("(min-width: 321px) and (max-width: 376px)").matches) {
        scrollDistance = getComputedStyle(document.documentElement)
            .getPropertyValue('--scroll-distance-small')
            .trim();
-   } else if (window.matchMedia("(min-width: 376px) and (max-width: 425px)").matches) {
+   } else if (window.matchMedia("(min-width: 377px) and (max-width: 1440px)").matches) {
     scrollDistance = getComputedStyle(document.documentElement)
         .getPropertyValue('--scroll-distance-medium')
         .trim();
