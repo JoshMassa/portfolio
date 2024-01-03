@@ -7,12 +7,12 @@
     --silver: rgba(100, 100, 100, 0.7);
     --offwhite: rgba(230, 230, 230);
     --lightblue: rgb(17, 149, 186);
-    --scroll-distance-x-small: 226px;
-    --scroll-distance-small: 220px;
-    --scroll-distance-medium: 326px;
-    --scroll-distance-large: 1450px;
+    --scroll-distance-small: 280px;
+    --scroll-distance-medium: 360px;
+    --scroll-distance-large: 500px;
+    --scroll-distance-x-large: 700px;
 
-    --scroll-distance: var(--scroll-distance-x-small);
+    --scroll-distance: var(--scroll-distance-small);
 }
 
 /* ****************** */
@@ -142,6 +142,7 @@ h3 {
 
 h4 {
     padding-top: 20px;
+    padding-bottom: 3%;
     text-align: center;
 }
 
@@ -256,7 +257,7 @@ textarea {
     width: 850px;
     display: flex;
     overflow-x: scroll;
-    grid-gap: 30px;
+    grid-gap: 60px;
 }
 
 .gallery figure {
@@ -267,7 +268,6 @@ textarea {
 }
 
 .gallery figure img {
-    width: 100%;
     width: 200px;
     transition: transform 0.3s;
 }
@@ -327,6 +327,10 @@ textarea {
     justify-self: end;
 }
 
+.work-container {
+    padding-bottom: 10%;
+}
+
 /* ********************** */
 /* Pseudo Class Selectors */
 /* ********************** */
@@ -351,7 +355,7 @@ button:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 97%;
+    width: 100%;
     height: 96%;
     background: rgba(0, 0, 0, 0.5);
     border: 3px solid var(--lightpurple);
@@ -382,7 +386,11 @@ button:hover {
 }
 
 #overlay3 p {
-    margin-left: -33px;
+    margin-left: -32px;
+}
+
+.overlay:hover {
+    background-color: var(--silver);
 }
 
 .hide {
@@ -582,7 +590,7 @@ textarea:focus::placeholder {
 /* ************* */
 /* Media Queries */
 /* ************* */
-@media screen and (min-width: 1900px) and (max-width: 2560px) {
+/* @media screen and (min-width: 1900px) and (max-width: 2560px) {
     .gallery {
         width: 1750px;
     }
@@ -624,52 +632,70 @@ textarea:focus::placeholder {
     #nextBtn {
         margin-left: 50px;
     }
-}
+} */
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .gallery figure img {
-        width: 400px;
-    }
-
-    #backBtn {
-        margin-left: 20px;
-    }
-
-    #nextBtn {
-        margin-left: 50px;
-    }
-}
-
-@media screen and (min-width: 426px) and (max-width: 768px) {
-    .gallery figure img {
-        width: 300px;
-    }
-}
-
-@media screen and (min-width: 376px) and (max-width: 425px) {
+@media screen and (min-width: 713px) and (max-width: 1024px) {
     :root {
-        --scroll-distance: var(--scroll-distance-medium);
+        --scroll-distance: var(--scroll-distance-x-large);
     }
-
+    
+    .gallery {
+        grid-gap: 100px;
+    }
+    
     .gallery figure img {
-        width: 300px;
-    }
-
-    .gallery-wrap {
-        margin-left: 10px;
+        width: 500px;
     }
 
     .image-container {
-        position: relative;
-        width: 100%;
+        margin: 0 6.5%;
     }
 
-    .overlay {
-        width: 98%;
+    #overlay1 p,
+    #overlay2 p,
+    #overlay3 p,
+    #overlay4 p {
+        padding: 30px;
+        font-size: 1.5em;
     }
 
     #overlay1 p {
-        margin-left: -70px;
+        margin-left: -106px;
+    }
+    
+    #overlay2 p,
+    #overlay4 p {
+        margin-left: -120px;
+    }
+    
+    #overlay3 p {
+        margin-left: -111px;
+    }
+
+    .work-container {
+        padding-bottom: 5%;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 712px) {
+    :root {
+        --scroll-distance: var(--scroll-distance-large);
+    }
+    
+    .gallery {
+        grid-gap: 100px;
+    }
+    
+    .gallery figure img {
+        width: 300px;
+    }
+
+    .image-container {
+        margin: 0 10%;
+    }
+
+    #overlay1 p {
+        margin-left: -69px;
     }
     
     #overlay2 p {
@@ -681,28 +707,37 @@ textarea:focus::placeholder {
     }
 
     #overlay4 p {
-        margin-left: -80px;
+        margin-left: -78px;
     }
+    
 }
 
-@media screen and (min-width: 321px) and (max-width: 375px) {
+@media screen and (min-width: 374px) and (max-width: 500px) {
     :root {
-        --scroll-distance: var(--scroll-distance-small);
+        --scroll-distance: var(--scroll-distance-medium);
+    }
+    
+    .gallery {
+        grid-gap: 80px;
     }
 
-    .gallery-wrap {
-        margin-left: 10px;
+    .image-container {
+        margin: 0 10%;
     }
 
-    .overlay {
-        width: 98%;
+    #overlay1 p {
+        margin-left: -30px;
     }
     
     #overlay2 p {
-        margin-left: -39px;
+        margin-left: -41px;
+    }
+    
+    #overlay3 p {
+        margin-left: -33px;
     }
 
     #overlay4 p {
-        margin-left: -39px;
+        margin-left: -38px;
     }
 }
