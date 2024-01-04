@@ -431,6 +431,11 @@ textarea:focus::placeholder {
 /* ************ */
 /* ID Selectors */
 /* ************ */
+#chat-bubble {
+    visibility: hidden;
+    position: absolute;
+}
+
 #copy-date {
     font-size: 10px;
     margin: -5px 0 0 -5px;
@@ -591,19 +596,326 @@ textarea:focus::placeholder {
 /* ************* */
 /* Media Queries */
 /* ************* */
-/* @media screen and (min-width: 1900px) and (max-width: 2560px) {
-    .gallery {
-        width: 1750px;
+@media screen and (min-width: 1901px) {
+    :root {
+        --scroll-distance: var(--scroll-distance-xx-large);
     }
 
     .gallery figure img {
-        width: 400px;
+        width: 250px;
     }
-} */
 
-@media screen and (min-width: 1025px) and (max-width: 1899px) {
+    #backBtn {
+        display: none;
+    }
+
+    button {
+        width: 220px;
+    }
+
+    .desc-container {
+        margin-top: 20px;
+    }
+
+    .exp-container {
+        padding-bottom: 35px;
+    }
+
+    #nextBtn {
+        display: none;
+    }
+
+    .about-container {
+        padding: 300px 0 0 0;
+    }
+
+    #about-content {
+        font-size: 24px;
+        line-height: 1.5;
+        margin-top: -250px;
+        padding: 0 50px;
+    }
+
+    .about-container h5 {
+        margin-left: 475px;
+        margin-top: -250px;
+    }
+
+    .about-container img {
+        width: 250px;
+    }
+
+    .contact-container {
+        width: 35%;
+        margin: 20px auto;
+    }
+
+    .exp-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .gallery {
+        width: 1400px;
+    }
+
+    #headshot-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    #chat-bubble {
+        visibility: hidden;
+        background-color: #f2f2f2;
+        text-align: center;
+        border-radius: 6px;
+        padding: 20px 10px 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 70%;
+        left: 125%;
+        margin-left: -60px;
+        width: 300px;
+        height: 100px;
+        cursor: pointer;
+        animation: pulse 1.5s infinite;
+    }
+
+    #chat-bubble p {
+        color: black;
+        font-size: 18px;
+        text-shadow: none;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    #headshot-container:hover #chat-bubble {
+        visibility: visible;
+    }
+
+    #image-1 {
+        width: 320px;
+    }
+
+    .intro-container {
+        padding-bottom: 100px;
+        padding-top: 110px;
+    }
+
+    #my-name {
+        font-size: 36px;
+    }
+
+    #my-photo img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .nav-links:hover {
+        object-fit: contain;
+    }
+
+    .intro-container p {
+        font-size: 20px;
+    }
+
+    .overlay {
+        width: 92%;
+        height: 100%;
+    }
+
+    #overlay1 {
+        width: 100%;
+    }
+
+    #overlay1 p {
+        margin-left: -55px;
+        padding: 20px;
+        font-size: 1.3em;
+    }
+    
+    #overlay2 p,
+    #overlay4 p {
+        margin-left: -60px;
+    }
+    
+    #overlay3 p {
+        margin-left: -53px;
+    }
+
+    .overlay-small {
+        height: 79%;
+    }
+
+    .work-container {
+        padding-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1900px) {
     :root {
         --scroll-distance: var(--scroll-distance-xx-large);
+    }
+
+    .gallery figure img {
+        width: 250px;
+    }
+
+    #backBtn {
+        display: none;
+    }
+
+    button {
+        width: 220px;
+    }
+
+    .desc-container {
+        margin-top: 20px;
+    }
+
+    .exp-container {
+        padding-bottom: 35px;
+    }
+
+    #nextBtn {
+        display: none;
+    }
+
+    .about-container {
+        padding: 300px 0 0 0;
+    }
+
+    #about-content {
+        font-size: 24px;
+        line-height: 1.5;
+        margin-top: -250px;
+        padding: 0 50px;
+    }
+
+    .about-container h5 {
+        margin-left: 475px;
+        margin-top: -250px;
+    }
+
+    .about-container img {
+        width: 250px;
+    }
+
+    .contact-container {
+        width: 50%;
+        margin: 20px auto;
+    }
+
+    .exp-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .gallery {
+        width: 1400px;
+    }
+
+    #headshot-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    #chat-bubble {
+        visibility: hidden;
+        background-color: #f2f2f2;
+        text-align: center;
+        border-radius: 6px;
+        padding: 20px 10px 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 70%;
+        left: 125%;
+        margin-left: -60px;
+        width: 300px;
+        height: 100px;
+        cursor: pointer;
+        animation: pulse 1.5s infinite;
+    }
+
+    #chat-bubble p {
+        color: black;
+        font-size: 18px;
+        text-shadow: none;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    #headshot-container:hover #chat-bubble {
+        visibility: visible;
+    }
+
+    #image-1 {
+        width: 320px;
+    }
+
+    .intro-container {
+        padding-bottom: 100px;
+        padding-top: 110px;
+    }
+
+    #my-name {
+        font-size: 36px;
+    }
+
+    #my-photo img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .nav-links:hover {
+        object-fit: contain;
+    }
+
+    .intro-container p {
+        font-size: 20px;
+    }
+
+    .overlay {
+        width: 92%;
+        height: 100%;
+    }
+
+    #overlay1 {
+        width: 100%;
+    }
+
+    #overlay1 p {
+        margin-left: -55px;
+        padding: 20px;
+        font-size: 1.3em;
+    }
+    
+    #overlay2 p,
+    #overlay4 p {
+        margin-left: -60px;
+    }
+    
+    #overlay3 p {
+        margin-left: -53px;
+    }
+
+    .overlay-small {
+        height: 79%;
+    }
+
+    .work-container {
+        padding-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+    :root {
+        --scroll-distance: var(--scroll-distance-xx-large);
+    }
+
+    #chat-bubble {
+        visibility: hidden;
+        position: absolute;
     }
 
     .gallery figure img {
@@ -614,12 +926,18 @@ textarea:focus::placeholder {
         margin: 0 25px;
     }
 
+    button {
+        width: 220px;
+    }
+
     .desc-container {
         margin-top: 20px;
     }
 
     .exp-container {
         padding-bottom: 35px;
+        display: flex;
+        justify-content: center;
     }
 
     #nextBtn {
@@ -644,14 +962,6 @@ textarea:focus::placeholder {
 
     .about-container img {
         width: 175px;
-    }
-
-    button {
-        width: 75%;
-    }
-    
-    .button-container {
-        margin-left: 75px;
     }
 
     .contact-container {
@@ -707,6 +1017,11 @@ textarea:focus::placeholder {
 @media screen and (min-width: 901px) and (max-width: 1024px) {
     :root {
         --scroll-distance: var(--scroll-distance-xx-large);
+    }
+
+    #chat-bubble {
+        visibility: hidden;
+        position: absolute;
     }
 
     .gallery figure img {
@@ -771,13 +1086,16 @@ textarea:focus::placeholder {
         font-size: 1.3em;
     }
     
-    #overlay2 p,
-    #overlay4 p {
+    #overlay2 p {
         margin-left: -60px;
     }
     
     #overlay3 p {
         margin-left: -53px;
+    }
+
+    #overlay4 p {
+        margin-left: -58px;
     }
 
     .overlay-small {
@@ -812,6 +1130,11 @@ textarea:focus::placeholder {
 
     .about-container img {
         width: 175px;
+    }
+
+    #chat-bubble {
+        visibility: hidden;
+        position: absolute;
     }
     
     .gallery {
@@ -857,6 +1180,11 @@ textarea:focus::placeholder {
         --scroll-distance: var(--scroll-distance-large);
     }
     
+    #chat-bubble {
+        visibility: hidden;
+        position: absolute;
+    }
+
     .gallery {
         grid-gap: 100px;
     }
@@ -892,6 +1220,11 @@ textarea:focus::placeholder {
         --scroll-distance: var(--scroll-distance-medium);
     }
     
+    #chat-bubble {
+        visibility: hidden;
+        position: absolute;
+    }
+
     .gallery {
         grid-gap: 80px;
     }
@@ -916,3 +1249,16 @@ textarea:focus::placeholder {
         margin-left: -38px;
     }
 }
+
+/* ********************* */
+/*       Keyframes       */
+/* ********************* */
+
+@keyframes pulse {
+    0%, 100% {
+    box-shadow: 0 0 5px 10px rgb(175, 0, 175);
+    }
+    50% {
+    box-shadow: 0 0 10px rgb(175, 0, 175);
+    }
+   }

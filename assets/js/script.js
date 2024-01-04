@@ -61,9 +61,11 @@ let backBtn = document.getElementById("backBtn")
 let nextBtn = document.getElementById("nextBtn")
 
 scrollContainer.addEventListener("wheel", (evt) => {
-    evt.preventDefault();
-    scrollContainer.scrollLeft += evt.deltaY;
-    scrollContainer.style.scrollBehavior = "auto";
+    if (!window.matchMedia("(min-width: 1440px)").matches) {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        scrollContainer.style.scrollBehavior = "auto";
+    }
 });
 
 nextBtn.addEventListener("click", () => {
@@ -98,13 +100,13 @@ function calculateScrollDistance() {
     scrollDistance = getComputedStyle(document.documentElement)
         .getPropertyValue('--scroll-distance-x-large')
         .trim();
-   } else {
+   } else if (window.matchMedia("(min-width: 901px) and (max-width: 1439px)").matches) {
     scrollDistance = getComputedStyle(document.documentElement)
         .getPropertyValue('--scroll-distance-xx-large')
         .trim();
-}
-   
-
+   } else if (window.matchMedia("(min-width: 1440px)").matches) {
+    scrollDistance = 0;
+   }
    return parseFloat(scrollDistance);
 }
 
