@@ -1048,9 +1048,39 @@ textarea:focus::placeholder {
         --scroll-distance: var(--scroll-distance-xx-large);
     }
 
+    #headshot-container {
+        position: relative;
+        display: inline-block;
+    }
+
     #chat-bubble {
         visibility: hidden;
+        background-color: #f2f2f2;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px 10px 10px;
         position: absolute;
+        z-index: 1;
+        bottom: 70%;
+        left: 125%;
+        margin-left: -40px;
+        width: 150px;
+        height: 70px;
+        cursor: pointer;
+        animation: pulse 1.5s infinite;
+    }
+
+    #chat-bubble p {
+        color: black;
+        font-size: 10px;
+        text-shadow: none;
+        text-align: center;
+        font-weight: 600;
+        margin: 0 auto;
+    }
+
+    #headshot-container:hover #chat-bubble {
+        visibility: visible;
     }
 
     .gallery figure img {
