@@ -94,9 +94,13 @@ function calculateScrollDistance() {
     scrollDistance = getComputedStyle(document.documentElement)
         .getPropertyValue('--scroll-distance-large')
         .trim();
-   } else {
+   } else if (window.matchMedia("(min-width: 713px) and (max-width: 900px)").matches) {
     scrollDistance = getComputedStyle(document.documentElement)
         .getPropertyValue('--scroll-distance-x-large')
+        .trim();
+   } else {
+    scrollDistance = getComputedStyle(document.documentElement)
+        .getPropertyValue('--scroll-distance-xx-large')
         .trim();
 }
    
@@ -139,7 +143,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // // // // // // //      \\ \\ \\ \\ \\ \\ \\ \\
 // // //  Script for Project Img Overlay  \\ \\ \\
 // // // // // // //        \\ \\ \\ \\ \\ \\ \\ \\
-var overlays = document.getElementsByClassName('image-overlay');
+var overlays = document.getElementsByClassName('overlay');
 var shouldShowOverlay = true;
 
 for (let i = 0; i < overlays.length; i++) {

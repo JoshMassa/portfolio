@@ -11,6 +11,7 @@
     --scroll-distance-medium: 360px;
     --scroll-distance-large: 500px;
     --scroll-distance-x-large: 700px;
+    --scroll-distance-xx-large: 900px;
 
     --scroll-distance: var(--scroll-distance-small);
 }
@@ -598,45 +599,219 @@ textarea:focus::placeholder {
     .gallery figure img {
         width: 400px;
     }
-}
+} */
 
-@media screen and (min-width: 1441px) and (max-width: 1899px) {
-    .gallery {
-        width: 1300px;
-        display: flex;
-        overflow-x: scroll;
+@media screen and (min-width: 1025px) and (max-width: 1899px) {
+    :root {
+        --scroll-distance: var(--scroll-distance-xx-large);
     }
 
     .gallery figure img {
-        width: 400px;
+        width: 250px;
     }
 
     #backBtn {
         margin: 0 25px;
     }
 
-    #nextBtn {
-        margin-left: 30px;
-    }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-    .gallery figure img {
-        width: 400px;
+    .desc-container {
+        margin-top: 20px;
     }
 
-    #backBtn {
-        margin: 0 25px;
+    .exp-container {
+        padding-bottom: 35px;
     }
 
     #nextBtn {
         margin-left: 50px;
     }
-} */
 
-@media screen and (min-width: 713px) and (max-width: 1024px) {
+    .about-container {
+        padding: 120px 0 0 0;
+    }
+
+    #about-content {
+        font-size: 20px;
+        line-height: 1.5;
+        margin-top: -100px;
+        padding: 0 50px;
+    }
+
+    .about-container h5 {
+        margin-left: 290px;
+        margin-top: -100px;
+    }
+
+    .about-container img {
+        width: 175px;
+    }
+
+    button {
+        width: 75%;
+    }
+    
+    .button-container {
+        margin-left: 75px;
+    }
+
+    .contact-container {
+        width: 50%;
+        margin: 20px auto;
+    }
+
+    .gallery {
+        grid-gap: 90px;
+    }
+
+    .gallery-wrap {
+        margin-left: 10px;
+    }
+
+    #image-1 {
+        width: 320px;
+    }
+
+    .intro-container {
+        padding-bottom: 20px;
+        padding-top: 30px;
+    }
+
+    .overlay {
+        height: 100%;
+    }
+
+    #overlay1 p {
+        margin-left: -55px;
+        padding: 20px;
+        font-size: 1.3em;
+    }
+    
+    #overlay2 p,
+    #overlay4 p {
+        margin-left: -60px;
+    }
+    
+    #overlay3 p {
+        margin-left: -53px;
+    }
+
+    .overlay-small {
+        height: 79%;
+    }
+
+    .work-container {
+        padding-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1024px) {
+    :root {
+        --scroll-distance: var(--scroll-distance-xx-large);
+    }
+
+    .gallery figure img {
+        width: 250px;
+    }
+
+    #backBtn {
+        margin: 0 25px;
+    }
+
+    .desc-container {
+        margin-top: 20px;
+    }
+
+    .exp-container {
+        padding-bottom: 35px;
+    }
+
+    #nextBtn {
+        margin-left: 50px;
+    }
+
+    .about-container {
+        padding: 120px 0 0 0;
+    }
+
+    #about-content {
+        font-size: 20px;
+        line-height: 1.5;
+        margin-top: -100px;
+        padding: 0 50px;
+    }
+
+    .about-container h5 {
+        margin-left: 230px;
+        margin-top: -100px;
+    }
+
+    .about-container img {
+        width: 175px;
+    }
+
+    .gallery {
+        grid-gap: 90px;
+    }
+
+    .gallery-wrap {
+        margin-left: 10px;
+    }
+
+    #image-1 {
+        width: 320px;
+    }
+
+    .overlay {
+        height: 100%;
+    }
+
+    #overlay1 p {
+        margin-left: -55px;
+        padding: 20px;
+        font-size: 1.3em;
+    }
+    
+    #overlay2 p,
+    #overlay4 p {
+        margin-left: -60px;
+    }
+    
+    #overlay3 p {
+        margin-left: -53px;
+    }
+
+    .overlay-small {
+        height: 79%;
+    }
+
+    .work-container {
+        padding-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 713px) and (max-width: 900px) {
     :root {
         --scroll-distance: var(--scroll-distance-x-large);
+    }
+
+    .about-container {
+        padding: 120px 0 0 0;
+    }
+
+    #about-content {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: -100px;
+        padding: 0 20px;
+    }
+
+    .about-container h5 {
+        margin-left: 160px;
+        margin-top: -100px;
+    }
+
+    .about-container img {
+        width: 175px;
     }
     
     .gallery {
